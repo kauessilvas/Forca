@@ -23,7 +23,7 @@ do
     }
 } while (string.IsNullOrEmpty(secretWord) || !secretWord.Any(char.IsLetter) || string.IsNullOrEmpty(letter) || !letter.Any(char.IsLetter));
 
-bool containsLetter = secretWord.Contains(letter);
+bool containsLetter = secretWord.Contains(letter, StringComparison.CurrentCultureIgnoreCase);
 string containsLetterResult = containsLetter ? "Verdadeiro" : "Falso";
 Console.WriteLine($"A letra \"{letter}\" existe na palavra secreta? => {containsLetterResult}");
 Console.WriteLine("=============");
